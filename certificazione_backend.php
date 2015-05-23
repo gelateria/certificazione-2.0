@@ -57,7 +57,7 @@ $row=$connessione->query($sql);
                 . '</td><td>' . $row['nome_certificazione']
                 . '</td><td>' . $row['descrizione_certificazione']
                 . '</td><td> ' . $row['data_certificazione']
-            //  . '</td><td> ' . $row['logo_certificazione']
+            //  LE FOTO NON SI VEDONO!!  
                 .'</td><td><img src="data:image/jpg;base64,"'.base64_encode($row['logo_certificazione']).'"width=300px>'
                 . '</td>';
 
@@ -135,7 +135,7 @@ echo'</table>';
                         VALUES ('".$cert."','".$data_cert."','".$descr."','".$foto."')");
           if ($sql->execute()) {
 
-              // non funziona il redirect!! perchè?!?!?!?!?!
+              // NON FUNZIONA IL REDIRECT!! PERCHè?!?!?!?!?!
 
              // header("location:certificazione_backend.php");
 
@@ -176,6 +176,10 @@ if(isset($_GET['delete'])) {
           </form>
            ";
 
+<<<<<<< HEAD
+=======
+    // se si tolgono SI E NO la query funziona è un problema con il get sicuro !!!!!!!!!!!!!!!!!!!! ODIO !
+>>>>>>> origin/master
 
        // se si clicca su NO
         if(isset($_POST['annulla'])){
