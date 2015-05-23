@@ -176,10 +176,7 @@ if(isset($_GET['delete'])) {
           </form>
            ";
 
-<<<<<<< HEAD
-=======
-    // se si tolgono SI E NO la query funziona è un problema con il get sicuro !!!!!!!!!!!!!!!!!!!! ODIO !
->>>>>>> origin/master
+
 
        // se si clicca su NO
         if(isset($_POST['annulla'])){
