@@ -165,30 +165,41 @@ if(isset($_GET['delete'])) {
         $data_=$_GET['data_certificazione'];
 
 
-////  SI e NO non funzionano!! sono disperata!! aiutatemiiiiiii
 
-        // HELPPPPPPP!
-
-        // HELPPPPPPP!
-
-        // SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS SOS
-
-    // se si tolgono i tasti la query funziona è un problema con il get sicuro !!!!!!!!!!!!!!!!!!!! ODIO !
 
         echo"
+            <form action='#' method='post'>
             <p>Sicuro di voler eliminare la Certificazione: ". $cert_ ." - " .$data_. " ?
-           <a href='certificazione_backend.php?annulla=annulla'> NO </a>
-          <a href='certificazione_backend.php?elimina=elimina'> SI </a></p>
+                 <input type='submit' name='annulla' value='NO' />
+                <input type='submit' name='elimina' value='SI' />
+
+          </form>
            ";
 
-        if(isset($_GET['annulla'])){
-            echo"Hai scelto di non eliminare la Certificazione:" .$cert_.
-             "<br>Torna alle certificazioni <a href='certificazione_backend.php'> Back </a>" ;
+
+       // se si clicca su NO
+        if(isset($_POST['annulla'])){
+
+
+
+          echo"
+            <p> Hai scelto di non eliminare la Certificazione: ". $cert_ ."
+          <br> Torna alle certificazioni <a href='certificazione_backend.php'> Back </a>
+          </p>
+           ";
+
+
         }
 
-        if(isset($_GET['elimina'])){
+    // se si clicca su si elimina il dato eseguendo la query
+
+        if(isset($_POST['elimina'])){
+
+                // esecuzione query cancellazione dato
 
            $sql= $connessione->exec(" DELETE FROM certificazione WHERE id_certificazione=".$id);
+
+
             echo"<br><br> La Certificazione ".$cert_." è stata Eliminata!
             <br> <a href='certificazione_backend.php'> Back </a> " ;
              ;
